@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        width:600px;
+        margin: 0 auto;
+        padding: 3rem;
+    }
+    article{
+        background-color: #eee;
+        padding: 2rem;
+    }
+    section{
+        padding: 1rem;
+    }
+    #item{
+        background-color: blanchedalmond;;
+    }
+    #pay{
+        background-color: powderblue;;
+    }
+    img{
+        width:50%;
+    }
+    label{
+        font-size: 1.5rem;
+    }
+</style>
+</head>
+<body>
+    <main>
+        <article>
+            <form method="post" >
+                {% csrf_token %}
+                <section id="item">
+                    <h2>Thank you</h2>
+                    <p>ご注文内容</p>
+                    <ul>
+                        <li>お買い上げ商品：{{item_name}}</li>
+                        <li>金額：{{item_price}}</li>
+                    </ul>
+                    <ul>
+                        <li>お客様名：{{name}}</li>
+                        <li>メールアドレス：{{email}}</li>
+                        <li>お届け先：{{address}}</li>
+                    </ul>
+                </section>
+            </form>
+            <hr>
+            <p>image source : <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/           Arare_rice_crackers_-_Osenbei_package-0412.jpg/1200px-Arare_rice_crackers_-_Osenbei_package-0412.jpg">Wiki</a></p>
+            <br>
+            <p><a href="https://pythonchannel.com">町のWeb屋 大島</a></p>
+        </article>
+    </main>
+</body>
+
+</html>

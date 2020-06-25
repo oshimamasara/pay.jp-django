@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<htmlv lang="ja">
+<head>
+<style>
+    body{
+        width:600px;
+        margin: 0 auto;
+        padding: 3rem;
+    }
+    article{
+        background-color: #eee;
+        padding: 2rem;
+    }
+    section{
+        padding: 1rem;
+    }
+    #item{
+        background-color: blanchedalmond;;
+    }
+    #pay{
+        background-color: powderblue;;
+    }
+    img{
+        width:50%;
+    }
+    label{
+        font-size: 1.5rem;
+    }
+    ul li span{
+        width: 120px;
+        float: left;
+    }
+    @media screen and (min-width:480px) and ( max-width:1112px){
+        body{
+            width: 90%;
+        }
+    }
+</style>
+</head>
+<body>
+    <main>
+        <article>
+            <form method="post" >
+                {% csrf_token %}
+                <section id="item">
+                    <label>ご注文内容：</label>
+                    <ul>
+                        <li style="text-align: center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Arare_rice_crackers_-_Osenbei_package-0412.jpg/1200px-Arare_rice_crackers_-_Osenbei_package-0412.jpg"></li>
+                        <li id="item_name" name="item_name">商品名：　うまい！おせんべい</li>
+                        <li id="item_price" name="item_price">金額：　100円（税込）</li>
+                        <li id="item_deli" name="item_deli">配送方法：　宅急便</li>
+                    </ul>
+                </section>
+                <section id="pay">
+                    <label>お届け先：</label>
+                    <ul>
+                        <li><span>お名前:</span><input class="input" id="name" name="input_name" type="name" required="" value="大島"></li>
+                        <li><span>メールアドレス:</span><input class="input" id="email" name="input_mail" type="email"  required="" value="test555@gmail.com"></li>
+                        <li><span>配送先:</span><input class="input" id="address" name="input_address" type="text" value="京都市上京区" required=""></li>
+                    </ul>
+                    <label>カード情報：</label>
+                    <ul>
+                        <li><span>カード番号:</span>
+                            <input class="input" id="card-number" name="card_number" type="tel" placeholder="4242424242424242" required="" size="16" value="4242424242424242">
+                        </li>
+                        <li>
+                            <span>カードのCVC:</span>
+                            <input class="input" id="card-cvc" name="card_cvc" type="number" placeholder="123" required="" value="123" size="3">
+                        </li>
+                        <li>
+                            <span>カード有効期限:</span>
+                            <input class="input" id="card-month" name="card_month" type="month" min="1" value="12" required="" size="4" placeholder="1">
+                            <input class="input" id="card-year" name="card_year" type="number" type="month" min="2020" value="2028" required="" size="6">
+                        </li>
+
+                    </ul>
+                
+                    <label>ご注文内容を送信：</label>
+                    <button id="payButton">送信</button>
+                </section>
+            </form>
+            <hr>
+            <p>image source : <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/           Arare_rice_crackers_-_Osenbei_package-0412.jpg/1200px-Arare_rice_crackers_-_Osenbei_package-0412.jpg">Wiki</a></p>
+            <br>
+            <p><a href="https://pythonchannel.com">町のWeb屋 大島</a></p>
+        </article>
+    </main>
+</body>
+
+</html>

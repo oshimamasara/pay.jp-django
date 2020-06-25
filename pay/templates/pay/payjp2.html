@@ -58,7 +58,25 @@
                         <li><span>メールアドレス:</span><input class="input" id="email" name="input_mail" type="email"  required="" value="test555@gmail.com"></li>
                         <li><span>配送先:</span><input class="input" id="address" name="input_address" type="text" value="京都市上京区" required=""></li>
                     </ul>
-                    <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_21b806f4eb0227339bf3d4af"></script>
+                    <label>カード情報：</label>
+                    <ul>
+                        <li><span>カード番号:</span>
+                            <input class="input" id="card-number" name="card_number" type="tel" placeholder="4242424242424242" required="" size="16" value="4242424242424242">
+                        </li>
+                        <li>
+                            <span>カードのCVC:</span>
+                            <input class="input" id="card-cvc" name="card_cvc" type="number" placeholder="123" required="" value="123" size="3">
+                        </li>
+                        <li>
+                            <span>カード有効期限:</span>
+                            <input class="input" id="card-month" name="card_month" type="month" min="1" value="12" required="" size="4" placeholder="2">
+                            <input class="input" id="card-year" name="card_year" type="number" type="month" min="2024" value="2028" required="" size="6" placeholder="2024">
+                        </li>
+
+                    </ul>                    
+                    <label>ご注文内容を送信：</label>
+                    <button id="payButton">送信</button>
+                    <!-- <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_21b806f4eb0227339bf3d4af"></script> -->
                 </section>
             </form>
             <hr>

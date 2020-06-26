@@ -46,6 +46,9 @@ def payjp_2(request):
         card_month = request.POST['card_month']
         card_year = request.POST['card_year']
 
+        if len(card_month) > 2:
+            card_month = card_month[-2:] # for Chrome
+
         # token
         import payjp # この位置じゃないとダメ
         payjp.api_key = 'sk_test_9e835c1a09250c18e4891c1d'

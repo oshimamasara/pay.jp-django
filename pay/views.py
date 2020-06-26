@@ -91,3 +91,6 @@ def payjp_2(request):
         return render(request, 'pay/thanks2.html', context)
     
     return render(request, 'pay/payjp2.html')
+
+def index(request):
+    return render(request, 'pay/index.html')

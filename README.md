@@ -11,3 +11,5 @@ pip install payjp
 ```
 
 http://localhost:8000/payjp/index
+
+> views.py の key を変える必要がある。[Pay.jp](https://pay.jp/)
